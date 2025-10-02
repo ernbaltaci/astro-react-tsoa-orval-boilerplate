@@ -1,0 +1,32 @@
+{
+  "name": "astro-react-tsoa-orval-boilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "pnpm -C apps/backend run build && pnpm -C apps/frontend run build",
+    "dev": "pnpm -C apps/backend run dev & pnpm -C apps/frontend run dev",
+    "codegen": "pnpm -C apps/backend run codegen && pnpm -C apps/frontend run codegen",
+    "build:prisma": "pnpm -C apps/backend run build:prisma",
+    "start:dev:backend": "pnpm -C apps/backend run dev",
+    "start:dev:frontend": "pnpm -C apps/frontend run dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ernbaltaci/astro-react-tsoa-orval-boilerplate.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ernbaltaci/astro-react-tsoa-orval-boilerplate/issues"
+  },
+  "homepage": "https://github.com/ernbaltaci/astro-react-tsoa-orval-boilerplate#readme",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "packageManager": "pnpm@9.12.0"
+}
+

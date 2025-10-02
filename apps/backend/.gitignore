@@ -41,6 +41,9 @@ build/Release
 node_modules/
 jspm_packages/
 
+# Lock files
+package-lock.json
+
 # Snowpack dependency directory (https://snowpack.dev/)
 web_modules/
 
@@ -137,5 +140,7 @@ dist
 # Vite logs files
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+
+/generated/prisma
 
 .DS_Store

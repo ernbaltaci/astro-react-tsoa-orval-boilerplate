@@ -1,0 +1,268 @@
+{
+	"openapi": "3.0.0",
+	"components": {
+		"examples": {},
+		"headers": {},
+		"parameters": {},
+		"requestBodies": {},
+		"responses": {},
+		"schemas": {
+			"LoginDto": {
+				"properties": {
+					"email": {
+						"type": "string"
+					},
+					"password": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"email",
+					"password"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"RegisterDto": {
+				"properties": {
+					"email": {
+						"type": "string"
+					},
+					"password": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"email",
+					"password"
+				],
+				"type": "object",
+				"additionalProperties": false
+			}
+		},
+		"securitySchemes": {}
+	},
+	"info": {
+		"title": "astro-react-tsoa-orval-boilerplate",
+		"version": "1.0.0"
+	},
+	"paths": {
+		"/user/@me": {
+			"get": {
+				"operationId": "Me",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"properties": {
+										"updatedAt": {
+											"type": "string",
+											"format": "date-time"
+										},
+										"createdAt": {
+											"type": "string",
+											"format": "date-time"
+										},
+										"isDeleted": {
+											"type": "boolean"
+										},
+										"email": {
+											"type": "string"
+										},
+										"id": {
+											"type": "string"
+										}
+									},
+									"required": [
+										"updatedAt",
+										"createdAt",
+										"isDeleted",
+										"email",
+										"id"
+									],
+									"type": "object"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"User"
+				],
+				"security": [
+					{
+						"jwt": []
+					}
+				],
+				"parameters": []
+			}
+		},
+		"/auth/login": {
+			"post": {
+				"operationId": "Login",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"properties": {
+										"user": {
+											"properties": {
+												"updatedAt": {
+													"type": "string",
+													"format": "date-time"
+												},
+												"createdAt": {
+													"type": "string",
+													"format": "date-time"
+												},
+												"role": {
+													"type": "string",
+													"enum": [
+														"USER"
+													],
+													"nullable": false
+												},
+												"isDeleted": {
+													"type": "boolean"
+												},
+												"password": {
+													"type": "string"
+												},
+												"email": {
+													"type": "string"
+												},
+												"id": {
+													"type": "string"
+												}
+											},
+											"required": [
+												"updatedAt",
+												"createdAt",
+												"role",
+												"isDeleted",
+												"password",
+												"email",
+												"id"
+											],
+											"type": "object"
+										},
+										"token": {}
+									},
+									"required": [
+										"user",
+										"token"
+									],
+									"type": "object"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Auth"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/LoginDto"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/auth/register": {
+			"post": {
+				"operationId": "Register",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"properties": {
+										"user": {
+											"properties": {
+												"updatedAt": {
+													"type": "string",
+													"format": "date-time"
+												},
+												"createdAt": {
+													"type": "string",
+													"format": "date-time"
+												},
+												"role": {
+													"type": "string",
+													"enum": [
+														"USER"
+													],
+													"nullable": false
+												},
+												"isDeleted": {
+													"type": "boolean"
+												},
+												"password": {
+													"type": "string"
+												},
+												"email": {
+													"type": "string"
+												},
+												"id": {
+													"type": "string"
+												}
+											},
+											"required": [
+												"updatedAt",
+												"createdAt",
+												"role",
+												"isDeleted",
+												"password",
+												"email",
+												"id"
+											],
+											"type": "object"
+										},
+										"token": {}
+									},
+									"required": [
+										"user",
+										"token"
+									],
+									"type": "object"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Auth"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/RegisterDto"
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"servers": [
+		{
+			"url": "/"
+		}
+	]
+}

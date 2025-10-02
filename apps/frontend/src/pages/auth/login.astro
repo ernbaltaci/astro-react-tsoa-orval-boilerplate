@@ -1,0 +1,22 @@
+---
+import { Card, CardContent, CardHeader, CardTitle } from '@/lib/components/ui/card';
+import LoginForm from '@/lib/components/Auth/LoginForm';
+import BaseLayout from '@/lib/layouts/BaseLayout.astro';
+---
+<BaseLayout title="Sign in">
+  <div class="flex min-h-screen items-center justify-center p-4">
+    <Card className="w-full max-w-md">
+      <CardHeader>
+        <CardTitle>Sign in</CardTitle>
+      </CardHeader>
+      <CardContent>
+        <LoginForm client:only="react" />
+      </CardContent>
+    </Card>
+  </div>
+  <div class="mt-4 text-center text-sm">
+    <a class="underline" href="/auth/register">Create an account</a>
+  </div>
+</BaseLayout>
+
+

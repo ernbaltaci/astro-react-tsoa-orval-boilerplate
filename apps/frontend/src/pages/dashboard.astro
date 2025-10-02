@@ -1,0 +1,27 @@
+---
+import { Sidebar } from '@/lib/components/Dashboard/Sidebar';
+import DashboardLayout from '@/lib/layouts/DashboardLayout.astro';
+import { Card, CardContent, CardHeader, CardTitle } from '@/lib/components/ui/card';
+---
+	<DashboardLayout title="Dashboard">
+	<div class="flex min-h-screen">
+		<Sidebar items={[{ label: 'Home', href: '/' }, { label: 'Dashboard', href: '/dashboard' }]} />
+		<div class="flex min-h-screen flex-1 flex-col">
+			<main class="grid flex-1 gap-4 p-4 md:grid-cols-2 lg:grid-cols-3">
+				<Card>
+					<CardHeader>
+						<CardTitle>User</CardTitle>
+					</CardHeader>
+					<CardContent>
+					<div>
+						selam
+					</div>
+					</CardContent>
+				</Card>
+			</main>
+		</div>
+	</div>
+	</DashboardLayout>
+
+
+

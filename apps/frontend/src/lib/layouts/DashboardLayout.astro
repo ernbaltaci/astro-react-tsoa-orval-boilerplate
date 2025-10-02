@@ -1,0 +1,18 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import { AuthGate } from '../components/Auth/AuthGate';
+
+
+
+const { title = 'App', description = '' } = Astro.props as {
+  title?: string;
+  description?: string;
+};
+---
+
+<BaseLayout title={title} description={description}>
+  <AuthGate>
+  <slot />
+  </AuthGate>
+</BaseLayout>
+

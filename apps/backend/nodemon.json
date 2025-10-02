@@ -1,0 +1,7 @@
+{
+  "watch": ["src"],
+  "ignore": ["src/routes.ts", "src/swagger.json", "dist"],
+  "ext": "ts",
+  "exec": "npm run tsoa:build && ts-node src/index.ts"
+}
+

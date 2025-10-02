@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "jsx": "react-jsx",
+    "strict": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "@/components/*": ["src/lib/components/*"],
+      "@/lib/*": ["src/lib/*"],
+      "@/api/*": ["src/lib/api/*"]
+    },
+    "types": ["astro/client"],
+    "noUnusedLocals": true,
+    "noUnusedParameters": true
+  },
+  "include": ["src", "env.d.ts"]
+}
+

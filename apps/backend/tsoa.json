@@ -1,0 +1,39 @@
+{
+  "entryFile": "src/index.ts",
+  "noImplicitAdditionalProperties": "throw-on-extras",
+  "controllerPathGlobs": ["src/**/*.controller.ts"],
+  "modelPathGlobs": [
+    "src/**/*.types.ts",
+    "src/common/types/*.ts",
+    "src/**/*.dtos.ts",
+    "src/common/types/error.ts"
+  ],
+  "servers": ["http://localhost:1453"],
+  "spec": {
+    "outputDirectory": "src",
+    "specVersion": 3,
+    "spec": {
+      "info": {
+        "title": "astro-react-tsoa-orval-boilerplate",
+        "version": "1.0.0"
+      }
+    }
+  },
+  "routes": {
+    "routesDir": "src",
+    "basePath": "/api/v1",
+    "authenticationModule": "src/common/middlewares/auth.middleware.ts",
+    "iocModule": "src/common/utils/ioc"
+  },
+  "ignore": ["**/node_modules/**"],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  },
+  "validation": {
+    "enabled": true
+  }
+}
+

@@ -1,0 +1,22 @@
+---
+import DashboardLayout from '@/lib/layouts/DashboardLayout.astro';
+import { Card, CardContent, CardHeader, CardTitle } from '@/lib/components/ui/card';
+import RegisterForm from '@/lib/components/Auth/RegisterForm';
+---
+<DashboardLayout title="Create account">
+  <div class="flex min-h-screen items-center justify-center p-4">
+    <Card className="w-full max-w-md">
+      <CardHeader>
+        <CardTitle>Create account</CardTitle>
+      </CardHeader>
+      <CardContent>
+        <RegisterForm client:only="react" />
+      </CardContent>
+    </Card>
+  </div>
+  <div class="mt-4 text-center text-sm">
+    <a class="underline" href="/auth/login">Already have an account? Sign in</a>
+  </div>
+</DashboardLayout>
+
+
